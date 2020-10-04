@@ -105,13 +105,14 @@ function SearchCustomer() {
             drawMemberTable(result);
         },
         error: function (xhr, ajaxOptions, thrownError) {
-            console.log("The error message is " +thrownError);
-        },
-        statusCode: {
-            404: function () {
-                alert("page not found");
-            }
+            console.log("The error message is " + thrownError);
+            $("#customerOverview").html(thrownError);
         }
+        //statusCode: {
+        //    404: function () {
+        //        alert("page not found");
+        //    }
+        //}
     });
 }
 

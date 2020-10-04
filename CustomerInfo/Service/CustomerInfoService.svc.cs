@@ -78,6 +78,14 @@ namespace CustomerInfo.Service
                                                   || sc.Gender.ToLower().Equals(searchText)
                                                   || sc.Points.Equals(searchText))
                                                     .ToList<Entities.CustomerInfo>();
+
+            if (result.Count == 0)
+            {
+                //throw new WebFaultException<string>("No Customer Found.", System.Net.HttpStatusCode.NotFound);
+                WebOperationContext.Current.OutgoingResponse.StatusCode = System.Net.HttpStatusCode.NotFound;
+                WebOperationContext.Current.OutgoingResponse.StatusDescription = "Oops! No customer found. :-(";
+            }
+
             return result;
         }
 
