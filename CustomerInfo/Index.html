@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.1.1.min.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/service.js"></script>
+    <link href="Styles/styles.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="menu">
+        <a href="javascript:showOverview()">Overview</a>
+        <a href="javascript:showAdd()">Add</a>
+        <a href="javascript:showTeamField()">Team</a>
+        <input id="searchText" type="text" placeholder="Search Text" />
+        <button onclick="SearchCustomer()">Search</button>
+    </div>
+    <div id="customerOverview">
+        <table>
+            <thead>
+                <tr>
+                    <td><a href="javascript:sortedMemberList('firstname')">Firstname</a></td>
+                    <td><a href="javascript:sortedMemberList('lastname')">Lastname</a></td>
+                    <td><a href="javascript:sortedMemberList('membername')">Member Name</a></td>
+                    <td><a href="javascript:sortedMemberList('pob')">Place of Birth</a></td>
+                    <td><a href="javascript:sortedMemberList('gender')">Gender</a></td>
+                    <td><a href="javascript:sortedMemberList('points')">Points</a></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody id="table-body"></tbody>
+        </table>
+    </div>
+    <div id="addCustomerForm" style="display:none;">
+        <input type="text" placeholder="Firstname" id="addFirstname" /><br />
+        <input type="text" placeholder="Lastname" id="addLastname" /><br />
+        <input type="text" placeholder="Member name" id="addMembername" /><br />
+        <input type="text" placeholder="Place of birth" id="addPlaceOfBirth" /><br />
+        <input type="text" placeholder="Gender" id="addGender" /><br />
+        <input type="text" placeholder="Points" id="addPoints" /><br />
+        <button onclick="AddCustomer()">Add</button>
+    </div>
+    <div id="updateCustomerForm" style="display:none;">
+        <input type="text" placeholder="Firstname" id="updateFirstname" /><br />
+        <input type="text" placeholder="Lastname" id="updateLastname" /><br />
+        <input type="text" placeholder="Member name" id="updateMembername" /><br />
+        <input type="text" placeholder="Place of birth" id="updatePlaceOfBirth" /><br />
+        <input type="text" placeholder="Gender" id="updateGender" /><br />
+        <input type="text" placeholder="Points" id="updatePoints" /><br />
+        <button onclick="UpdateCustomer()">Update</button><br />
+    </div>
+    <div id="teamfield" style="display:none;">
+        <div id="memberSelection"></div> 
+        <button onclick="winner(); return false;">Team!</button>
+        <div id="countResult"></div>
+    </div>
+</body>
+</html>
